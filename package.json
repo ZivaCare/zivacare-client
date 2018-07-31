@@ -1,0 +1,27 @@
+{
+  "name": "zivacare-client",
+  "version": "0.1.0",
+  "description": "An npm module that provides an easy way to make GET/POST requests to the Zivacare API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require babel-core/register"
+  },
+  "author": "Stefan Cosma <hello@stefancosma.xyz>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.2.0",
+    "request": "^2.87.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "engines": {
+    "node": ">=8.11.3"
+  }
+}
