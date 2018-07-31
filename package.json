@@ -1,7 +1,7 @@
 {
   "name": "zivacare-client",
   "version": "0.1.0",
-  "description": "An npm module that provides an easy way to make GET/POST requests to the Zivacare API.",
+  "description": "An npm module that provides an easy way to make GET/POST requests to the Ziva Care API.",
   "main": "index.js",
   "scripts": {
     "test": "mocha --require babel-core/register"

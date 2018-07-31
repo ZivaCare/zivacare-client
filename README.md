@@ -1,14 +1,14 @@
-Zivacare Client
+Ziva Care Client
 ===
 
-An npm module that provides an easy way to make GET/POST requests to the Zivacare API.
+An npm module that provides an easy way to make GET/POST requests to the Ziva Care API.
 
 License
 ==
 
 MIT License
 
-Copyright (c) 2018 Stefan Cosma
+Copyright (c) 2018 SC Ropardo SRL
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
