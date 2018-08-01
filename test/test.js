@@ -6,9 +6,10 @@ import chaiAsPromised from "chai-as-promised";
 import { Zivacare } from '../index';
 
 const expect = chai.expect;
+const should = chai.should();
 chai.use(chaiAsPromised);
 
-chai.Assertion.addProperty('uppercase', () => {
+chai.Assertion.addProperty('uppercase', function() {
     let obj = this._obj;
     new chai.Assertion(obj).to.be.a('string');
 
@@ -19,7 +20,7 @@ chai.Assertion.addProperty('uppercase', () => {
     );
 });
 
-chai.Assertion.addProperty('lowercase', () => {
+chai.Assertion.addProperty('lowercase', function() {
     let obj = this._obj;
     new chai.Assertion(obj).to.be.a('string');
 
@@ -44,24 +45,26 @@ describe('Zivacare Connect', () => {
             return expect(zivacare.prettifyEndpoint('BODY')).to.be.lowercase;
         });
 
-        // it();
+        it('The request method should be accepted', () => {
+            return expect(zivacare.checkMethod('POST')).to.be.true;
+        });
 
-        // it();
+        it('Set options should return an object', () => {
+            return expect(zivacare.setRequestOptions('POST', 'body')).to.be.an('object');
+        });
 
-        // it();
+        it('Get endpoint url should be a string', () => {
+            return expect(zivacare.getEndpointUrl('body')).to.be.a('string');
+        });
 
-        it('Request method returns a promise', () => {
+        it('Request method returns a promise with params', () => {
             return expect(zivacare.request('body', 'GET')).to.be.a('promise');
         });
 
-        // it();
+        it('Request method returns a promise without params', () => {
+            return zivacare.request().should.be.rejectedWith(Error);
+        });
 
     });
-
-    // describe('Request test', () => {
-
-    //     it();
-
-    // });
 
 });

@@ -35,10 +35,10 @@ export class Zivacare {
 
         return new Promise((resolve, reject) => {
 
-            endpoint = this.prettifyEndpoint(endpoint);
-            method = this.prettifyMethod(method);
+            if (endpoint && method && this.checkMethod(method)) {
 
-            if (!endpoint && !method && this.checkMethod(method)) {
+                endpoint = this.prettifyEndpoint(endpoint);
+                method = this.prettifyMethod(method);
 
                 let options = this.setRequestOptions(method, endpoint, data);
 
@@ -49,7 +49,7 @@ export class Zivacare {
                 });
 
             } else {
-                reject("Method not allowed");
+                throw new Error("You need to provide an endpoint and an accepted method");
             }
 
         });
@@ -70,16 +70,31 @@ export class Zivacare {
             url: this.getEndpointUrl(endpoint),
             qs: {
                 access_token: this.accessToken
+            },
+            headers: {
+                'Cache-Control': 'no-cache'
             }
         };
 
-        if (method === 'POST') {
+        if (method === 'GET' && data) {
 
-            options.headers = {
-                'Cache-Control': 'no-cache'
-            };
+            let extra = '';
 
-        } else if (method === 'POST') {
+            if (data.length === 1) {
+
+                extra = data[0];
+
+            } else if (data.length === 2) {
+
+                extra = data.join('/');
+
+            }
+
+            options.url = `${this.getEndpointUrl(endpoint)}/${extra}`;
+
+        }
+
+        if (method === 'POST' && data) {
 
             options.headers = {
                 'Cache-Control': 'no-cache',
@@ -115,6 +130,8 @@ export class Zivacare {
      * @memberof Zivacare
      */
     checkMethod(method) {
+
+        method = this.prettifyMethod(method);
 
         let allowedMethods = ['GET', 'POST'];
 
