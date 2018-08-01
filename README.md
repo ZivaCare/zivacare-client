@@ -1,10 +1,53 @@
-Ziva Care Client
-===
+# Ziva Care Client
 
 An npm module that provides an easy way to make GET/POST requests to the Ziva Care API.
 
-License
-==
+## Install
+
+You can either use `npm` or `yarn` to install the package.
+
+```
+npm i zivacare-connect
+```
+
+or
+
+```
+yarn add zivacare-connect
+```
+
+## Usage
+This module is ES6 compatible and returns a promise when making a request. You can use the following snippet as an example.
+
+```
+import zivacare from 'zivacare-connect';
+
+let zivacare = new Zivacare(YOUR_ACCESS_TOKEN);
+
+zivacare.request('body', 'GET').then(returnedData => {
+    console.dir(returnedData);
+}, error => {
+    console.dir(error);
+});
+
+let data = {
+  "source": "fitbit",
+  "record_time": "2014-09-16T15:52:01+0000",
+  "value": "90",
+  "unit": "bpm"
+};
+
+zivacare.request('human.respiration_rate', 'POST', data).then(returnedData => {
+    console.dir(returnedData);
+}, error => {
+    console.dir(error);
+});
+
+```
+
+## Development
+
+## License
 
 MIT License
 
