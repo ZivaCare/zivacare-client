@@ -7,7 +7,7 @@ import request from "request";
  *
  * @class Zivacare
  */
-export default class Zivacare {
+export class Zivacare {
 
     /**
      * Creates an instance of Zivacare.

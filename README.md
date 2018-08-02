@@ -2,7 +2,7 @@
 
 An npm module that provides an easy way to make GET/POST requests to the Ziva Care API.
 
-## Install
+## Installation
 
 You can either use `npm` or `yarn` to install the package.
 
@@ -20,7 +20,7 @@ yarn add zivacare-connect
 This module is ES6 compatible and returns a promise when making a request. You can use the following snippet as an example.
 
 ```
-import zivacare from 'zivacare-connect';
+import Zivacare from 'zivacare-connect';
 
 let zivacare = new Zivacare(YOUR_ACCESS_TOKEN);
 
@@ -45,7 +45,31 @@ zivacare.request('human.respiration_rate', 'POST', data).then(returnedData => {
 
 ```
 
+## Available methods
+
+### request(endpoint, method, data)
+
+The request method accepts three parameters: endpoint, method and data.
+
+* `endpoint` (Required) - Checkout a list of all the endpoints [here](https://docs.zivacare.com/documentation/api-reference-all/). The endpoint can either be written with a dot separator, eg. `human.respiration_rate`, or with a slash separator, eg. `human/respiration_rate`.
+* `method` (Required) - Accepted methods are `GET`, `POST`.
+* `data` (Optional) - Default `null`. When making a `POST` request you can provide a JS object. When making a `GET` request and you're calling an endpoint like this one `human/respiration_rates/period/{start}/{end}` you can provide an array for the data `["2018-27-01", "2018-01-04"]`. The request shuld look something like this:
+
+```
+zivacare.request('human/respiration_rates/period', 'GET', ["2018-27-01", "2018-01-04"])
+```
+
 ## Development
+
+The `index.js` file contains all the methods required to run the module. You should use native ES6 features.
+
+There are tests written for this module, that you can be run using `npm test`.
+
+## Contributing
+
+Thank you very much for considering to contribute!
+
+Please make sure you follow our Code Of Conduct and we also strongly recommend reading our Contributing Guide.
 
 ## License
 
