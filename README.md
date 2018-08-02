@@ -69,7 +69,7 @@ There are tests written for this module, that you can be run using `npm test`.
 
 Thank you very much for considering to contribute!
 
-Please make sure you follow our Code Of Conduct and we also strongly recommend reading our Contributing Guide.
+Please make sure you follow our [Code Of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 
