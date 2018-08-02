@@ -161,7 +161,13 @@ export class Zivacare {
      */
     prettifyEndpoint(endpoint) {
 
-        return endpoint.toLowerCase();
+        endpoint = endpoint.toLowerCase();
+
+        if (endpoint.includes('.')) {
+            endpoint = endpoint.split('.').join('/');
+        }
+
+        return endpoint;
 
     }
 

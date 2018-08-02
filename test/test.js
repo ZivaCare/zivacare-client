@@ -53,8 +53,12 @@ describe('Zivacare Connect', () => {
             return expect(zivacare.setRequestOptions('POST', 'body')).to.be.an('object');
         });
 
-        it('Get endpoint url should be a string', () => {
-            return expect(zivacare.getEndpointUrl('body')).to.be.a('string');
+        it('Get endpoint url should be a string with dot', () => {
+            return expect(zivacare.getEndpointUrl('body.left_lower_leg')).to.be.a('string');
+        });
+
+        it('Get endpoint url should be a string with slash', () => {
+            return expect(zivacare.getEndpointUrl('body/left_lower_leg')).to.be.a('string');
         });
 
         it('Request method returns a promise with params', () => {
