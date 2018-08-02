@@ -33,7 +33,7 @@ chai.Assertion.addProperty('lowercase', function() {
 
 describe('Zivacare Connect', () => {
 
-    let zivacare = new Zivacare('M2Q4MzlkNjg0OTQyYmZmMjM4NDQ1Y2E3NGY0MjZjNzFjNTQ3ZWY4ZDIwMmJmYzk4NmIxNWFjYWRjMzNmODc0OQ');
+    let zivacare = new Zivacare('OWZkNDMzMDZhNGQ2YzJmNWY3NzQ4Nzk0MzY4YjgyNGQ4MDExODZhZWMzYjJjY2I5NjFjYTlkODZiNWVhMDAxYQ');
 
     describe('Method tests', () => {
 
