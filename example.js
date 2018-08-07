@@ -1,6 +1,6 @@
-import Zivacare from '.';
+import ZivaCareClient from '.';
 
-let zivacare = new Zivacare("OWZkNDMzMDZhNGQ2YzJmNWY3NzQ4Nzk0MzY4YjgyNGQ4MDExODZhZWMzYjJjY2I5NjFjYTlkODZiNWVhMDAxYQ");
+let zivacare = new ZivaCareClient("OWZkNDMzMDZhNGQ2YzJmNWY3NzQ4Nzk0MzY4YjgyNGQ4MDExODZhZWMzYjJjY2I5NjFjYTlkODZiNWVhMDAxYQ");
 
 zivacare.request('body', 'GET').then(returnedData => {
     console.dir(returnedData);

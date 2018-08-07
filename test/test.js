@@ -3,7 +3,7 @@
 import chai from 'chai';
 import chaiAsPromised from "chai-as-promised";
 
-import { Zivacare } from '../index';
+import { ZivaCareClient } from '../index';
 
 const expect = chai.expect;
 const should = chai.should();
@@ -31,9 +31,9 @@ chai.Assertion.addProperty('lowercase', function() {
     );
 });
 
-describe('Zivacare Connect', () => {
+describe('ZivaCareClient Connect', () => {
 
-    let zivacare = new Zivacare('OWZkNDMzMDZhNGQ2YzJmNWY3NzQ4Nzk0MzY4YjgyNGQ4MDExODZhZWMzYjJjY2I5NjFjYTlkODZiNWVhMDAxYQ');
+    let zivacare = new ZivaCareClient('OWZkNDMzMDZhNGQ2YzJmNWY3NzQ4Nzk0MzY4YjgyNGQ4MDExODZhZWMzYjJjY2I5NjFjYTlkODZiNWVhMDAxYQ');
 
     describe('Method tests', () => {
 

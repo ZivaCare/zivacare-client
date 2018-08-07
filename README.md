@@ -20,9 +20,9 @@ yarn add zivacare-connect
 This module is ES6 compatible and returns a promise when making a request. You can use the following snippet as an example.
 
 ```
-import Zivacare from 'zivacare-connect';
+import ZivaCareClient from 'zivacare-connect';
 
-let zivacare = new Zivacare(YOUR_ACCESS_TOKEN);
+let zivacare = new ZivaCareClient(YOUR_ACCESS_TOKEN);
 
 zivacare.request('body', 'GET').then(returnedData => {
     console.dir(returnedData);

@@ -3,16 +3,16 @@
 import request from "request";
 
 /**
- * The main class that provides connectivity to the Zivacare API
+ * The main class that provides connectivity to the Ziva Care API
  *
- * @class Zivacare
+ * @class ZivaCareClient
  */
-export class Zivacare {
+export class ZivaCareClient {
 
     /**
-     * Creates an instance of Zivacare.
+     * Creates an instance of ZivaCareClient.
      * @param {String} accessToken
-     * @memberof Zivacare
+     * @memberof ZivaCareClient
      */
     constructor(accessToken) {
 
@@ -23,13 +23,13 @@ export class Zivacare {
 
     /**
      * The main request method that provides an easy to way to make a
-     * request to the Zivacare API.
+     * request to the Ziva Care API.
      *
      * @param {String} endpoint Checkout a list of all the endpoints here https://docs.zivacare.com/documentation/api-reference-all/
      * @param {String} method Accepted methods are GET, POST
      * @param {Object} [data=null] By default null, if not null it should be an Object
      * @returns {Promise} Resolves into a promise
-     * @memberof Zivacare
+     * @memberof ZivaCareClient
      */
     request(endpoint, method, data = null) {
 
@@ -61,7 +61,7 @@ export class Zivacare {
      *
      * @param {String} method The method that requires the request options
      * @returns {Object} Returns an object with all the request options baed on request method
-     * @memberof Zivacare
+     * @memberof ZivaCareClient
      */
     setRequestOptions(method, endpoint, data) {
 
@@ -114,7 +114,7 @@ export class Zivacare {
      *
      * @param {String} endpoint
      * @returns {String} The interpolated URL
-     * @memberof Zivacare
+     * @memberof ZivaCareClient
      */
     getEndpointUrl(endpoint) {
 
@@ -127,7 +127,7 @@ export class Zivacare {
      *
      * @param {String} method
      * @returns {Boolean} If the method is allowed or not
-     * @memberof Zivacare
+     * @memberof ZivaCareClient
      */
     checkMethod(method) {
 
@@ -144,7 +144,7 @@ export class Zivacare {
      *
      * @param {String} method
      * @returns The method into an uppercase string
-     * @memberof Zivacare
+     * @memberof ZivaCareClient
      */
     prettifyMethod(method) {
 
@@ -157,7 +157,7 @@ export class Zivacare {
      *
      * @param {String} endpoint
      * @returns The endpoint into a lowercase string
-     * @memberof Zivacare
+     * @memberof ZivaCareClient
      */
     prettifyEndpoint(endpoint) {
 
